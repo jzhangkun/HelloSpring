@@ -19,4 +19,10 @@ public class Greeting {
     public String getContent() {
         return content;
     }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(id).append(" ").append(content);
+        return builder.toString();
+    }
 }

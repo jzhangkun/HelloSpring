@@ -1,7 +1,5 @@
 package com.kun.hello;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -13,8 +11,6 @@ import javax.servlet.ServletException;
  * Created by jzhangkun on 28/06/2017.
  */
 public class SerlvetInitlializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-    @Autowired
-    Environment env;
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
@@ -41,8 +37,8 @@ public class SerlvetInitlializer extends AbstractAnnotationConfigDispatcherServl
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
-        //servletContext.setInitParameter("springs.profiles.active", env.getProperty("environment"));
-        System.out.println("environment: " + env.getProperty("environment"));
+        // initialize before servlet startup
+        //servletContext.setInitParameter("springs.profiles.active", "dev");
         super.onStartup(servletContext);
     }
 
