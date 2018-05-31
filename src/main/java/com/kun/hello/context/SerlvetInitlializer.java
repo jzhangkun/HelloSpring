@@ -1,4 +1,4 @@
-package com.kun.hello;
+package com.kun.hello.context;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -14,7 +14,7 @@ public class SerlvetInitlializer extends AbstractAnnotationConfigDispatcherServl
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { Application.class };
+        return new Class[] { AppConfiguration.class };
     }
 
     @Override
@@ -24,7 +24,7 @@ public class SerlvetInitlializer extends AbstractAnnotationConfigDispatcherServl
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { Application.class };
+        return new Class[] { AppConfiguration.class };
     }
 
     @Override
