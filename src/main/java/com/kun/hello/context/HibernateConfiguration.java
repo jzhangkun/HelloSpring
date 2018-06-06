@@ -19,6 +19,7 @@ public class HibernateConfiguration {
     @Autowired
     private Environment environment;
 
+    /*
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
@@ -27,6 +28,7 @@ public class HibernateConfiguration {
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
+    */
 
     @Bean
     public DataSource dataSource() {

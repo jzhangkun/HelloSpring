@@ -56,6 +56,10 @@ public class User {
         return this.created;
     }
 
+    public User() {
+
+    }
+
     public User(String fname, String lname, String uid) {
         this.firstName = fname;
         this.lastName = lname;
