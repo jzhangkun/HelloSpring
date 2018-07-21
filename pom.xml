@@ -28,6 +28,7 @@
         <!-- Hibernate / JPA -->
         <hibernate.version>5.3.1.Final</hibernate.version>
         <mysql.version>6.0.6</mysql.version>
+        <h2.version>1.4.197</h2.version>
 
         <!-- json -->
         <jackson.version>2.9.4</jackson.version>
@@ -126,6 +127,13 @@
             <version>${mysql.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.197</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- Test Artifacts -->
         <dependency>

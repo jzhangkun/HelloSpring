@@ -14,7 +14,7 @@ public class SerlvetInitlializer extends AbstractAnnotationConfigDispatcherServl
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { AppConfiguration.class };
+        return new Class[] { WebConfig.class };
     }
 
     @Override
@@ -24,7 +24,7 @@ public class SerlvetInitlializer extends AbstractAnnotationConfigDispatcherServl
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { AppConfiguration.class };
+        return new Class[] { WebConfig.class };
     }
 
     @Override
