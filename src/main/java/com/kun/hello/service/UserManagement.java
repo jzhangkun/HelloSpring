@@ -19,6 +19,7 @@ import javax.persistence.criteria.Root;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import com.kun.hello.util.QueryUtil;
 
@@ -29,6 +30,15 @@ public class UserManagement {
 
     @Autowired
     UserRepository userRepository;
+
+    public User getUser(Long id) {
+        Optional<User> user = this.userRepository.findById(id);
+        if (user.isPresent()) {
+            return user.get();
+        } else {
+            return null;
+        }
+    }
 
     @PersistenceContext
     private EntityManager em;
