@@ -1,5 +1,6 @@
 package com.kun.hello.client;
 
+import org.neo4j.ogm.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
@@ -18,11 +19,27 @@ public class RestTemplateClient {
         this.url = url;
     }
 
+    public String get() {
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, null, String.class);
+        logger.debug("Response: " + response.toString());
+
+        return response.getBody().toString();
+    }
+
     public void post(String message) {
         HttpHeaders header = new HttpHeaders();
         HttpEntity<String> request = new HttpEntity<String>(message, header);
-        logger.info("Request: " + request.toString());
+        logger.debug("Request: " + request.toString());
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, request, String.class);
-        logger.info("Response: " + response.toString());
+        logger.debug("Response: " + response.toString());
+    }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder()
+                .append("RestTemplate Client ")
+                .append(restTemplate.toString())
+                .append(" route to URL ")
+                .append(url);
+        return builder.toString();
     }
 }
