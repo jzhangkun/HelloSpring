@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.kun.hello.context.HttpClientConfig;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ import java.util.Objects;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {HttpClientConfig.class})
 @TestPropertySource(properties = {"environment=local"})
+@Ignore("IntegrationTest")
 public class RestTemplateClientIntegrationTest {
     @Autowired
     private RestTemplate restTemplate;

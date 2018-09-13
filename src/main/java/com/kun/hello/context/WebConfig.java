@@ -22,4 +22,9 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new ExecuteTimeInterceptor()).addPathPatterns("/**");
     }
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/docs/**").addResourceLocations("classpath:/static/docs/");
+    }
+
 }
