@@ -24,6 +24,8 @@ public class HttpClientConfig {
         CloseableHttpClient httpClient = HttpClientBuilder
                 .create()
                 .useSystemProperties()
+                .setMaxConnTotal(100)
+                .setMaxConnPerRoute(1)
                 .build();
         return httpClient;
     }

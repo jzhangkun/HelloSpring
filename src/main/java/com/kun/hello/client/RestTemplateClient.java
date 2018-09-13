@@ -1,5 +1,6 @@
 package com.kun.hello.client;
 
+import com.google.common.collect.Maps;
 import org.neo4j.ogm.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,6 +9,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Map;
 
 public class RestTemplateClient {
     Logger logger = LoggerFactory.getLogger(RestTemplateClient.class);
@@ -19,11 +22,10 @@ public class RestTemplateClient {
         this.url = url;
     }
 
-    public String get() {
+    public ResponseEntity<String> get() {
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, null, String.class);
         logger.debug("Response: " + response.toString());
-
-        return response.getBody().toString();
+        return response;
     }
 
     public void post(String message) {

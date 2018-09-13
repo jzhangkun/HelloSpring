@@ -17,7 +17,7 @@ public class SessionController {
         HttpSession session = request.getSession();
         String sessionId = session.getId();
         StringBuilder builder = new StringBuilder()
-                .append("Session ID: ").append(sessionId);
+                .append("SessionID=").append(sessionId);
 
         return builder.toString();
     }
