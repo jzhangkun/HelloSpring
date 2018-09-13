@@ -1,0 +1,4 @@
+include::{snippets}/Greeting/curl-request.adoc[]
+include::{snippets}/Greeting/http-request.adoc[]
+include::{snippets}/Greeting/http-response.adoc[]
+include::{snippets}/Greeting/request-body.adoc[]
